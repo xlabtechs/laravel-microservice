@@ -2,40 +2,40 @@
 
 namespace App\Http\Controllers;
 
-Use \App\Models\Api\Article as Article;
+Use \App\Models\Category as Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 
-class ArticleController extends Controller
+class CategoryController extends Controller
 {
     public function index()
     {
-        return Article::all();
+        return Category::all();
     }
 
     public function show($id)
     {
-        return Article::find($id);
+        return Category::find($id);
     }
 
     public function store(Request $request)
     {
-        return Article::create($request->all());
+        return Category::create($request->all());
     }
 
     public function update(Request $request, $id)
     {
-        $article = Article::findOrFail($id);
-        $article->update($request->all());
+        $category = Category::findOrFail($id);
+        $category->update($request->all());
 
-        return $article;
+        return $category;
     }
 
     public function delete(Request $request, $id)
     {
-        $article = Article::findOrFail($id);
-        $article->delete();
+        $category = Category::findOrFail($id);
+        $category->delete();
 
         return 204;
     }
