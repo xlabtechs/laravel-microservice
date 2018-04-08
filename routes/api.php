@@ -38,5 +38,8 @@ Route::post('logout', 'Auth\LoginController@logout');
     Route::put('links/{link}', 'Api\LinkController@update');
     Route::delete('links/{link}', 'Api\LinkController@delete');
 	
-	
+	//link_tag pivot
+	Route::post('links/attachTags/{link}', 'Api\LinkController@attachTags');
+	Route::post('links/detachTags/{link}', 'Api\LinkController@detachTags');
+	Route::get('links/tags/{link}', 'Api\LinkController@tags');
 //});
