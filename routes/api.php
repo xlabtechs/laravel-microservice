@@ -23,7 +23,7 @@ Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout');
 
 //Route::group(['middleware' => 'auth:api'], function() {
-	//Categories routes
+	//Category routes
     Route::get('categories', 'Api\CategoryController@index');
     Route::get('categories/{category}', 'Api\CategoryController@show');
     Route::post('categories', 'Api\CategoryController@store');
@@ -31,12 +31,19 @@ Route::post('logout', 'Auth\LoginController@logout');
     Route::delete('categories/{category}', 'Api\CategoryController@delete');
 	
 	
-	//Links routes
+	//Link routes
     Route::get('links', 'Api\LinkController@index');
     Route::get('links/{link}', 'Api\LinkController@show');
     Route::post('links', 'Api\LinkController@store');
     Route::put('links/{link}', 'Api\LinkController@update');
     Route::delete('links/{link}', 'Api\LinkController@delete');
+	
+	//Tag routes
+    Route::get('tags', 'Api\TagController@index');
+    Route::get('tags/{tag}', 'Api\TagController@show');
+    Route::post('tags', 'Api\TagController@store');
+    Route::put('tags/{tag}', 'Api\TagController@update');
+    Route::delete('tags/{tag}', 'Api\TagController@delete');
 	
 	//link_tag pivot
 	Route::post('links/attachTags/{link}', 'Api\LinkController@attachTags');
