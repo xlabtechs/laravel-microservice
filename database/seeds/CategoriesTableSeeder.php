@@ -17,11 +17,14 @@ class CategoriesTableSeeder extends Seeder
         Category::truncate();
 
         // And now, let's create a few categories in our database:
-        for ($i = 0; $i < 10; $i++) {
-            Category::create([
-                'name' => 'Category -'. $i,
-                'description' => 'Category'. $i .' description',
-            ]);
-        }
+        Category::create([
+			'name' => 'application/rss+xml',
+			'description' => 'application/rss+xml description',
+		]);
+			
+		Category::create([
+			'name' => 'application/atom+xml',
+			'description' => 'application/atom+xml description',
+		]);
     }
 }
